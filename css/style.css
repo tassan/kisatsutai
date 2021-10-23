@@ -1,4 +1,11 @@
 body {
     font-style: sans-serif;
-    background-color: indigo;
+    background-color: #242331;
+    color: #DDCA7D;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    color: #BF3100;
+}
+
+
