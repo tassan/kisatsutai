@@ -4,11 +4,11 @@ on: [push]
 
 jobs:
   build:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions.checkout@v1
+      - uses: actions/checkout@v1
       
-      - name: Copy Repository Content via SCP 📝
+      - name: Copy Repository Content via SCP
         uses: appleboy/scp-action@master
         env:
           HOST: ${{ secrets.HOST }}
@@ -19,7 +19,7 @@ jobs:
           source: "."
           target: "/var/www/kisatsutai"
       
-      - name: Executing Remote Command 👨‍💻
+      - name: Executing Remote Commad
         uses: appleboy/ssh-action@master
         with:
           HOST: ${{ secrets.HOST }}
