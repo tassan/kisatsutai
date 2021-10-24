@@ -13,9 +13,9 @@ jobs:
         env:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
-          PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
           PASSPHRASE: ${{ secrets.PASSWORD }}
+          PORT: ${{ secrets.PORT }}
         with:
           source: "."
           target: "/var/www/kisatsutai"
@@ -23,9 +23,9 @@ jobs:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.4
         with:
-          HOST: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PORT: ${{ secrets.PORT }}
-          KEY: ${{ secrets.SSHKEY }}
-          PASSPHRASE: ${{ secrets.PASSWORD }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSHKEY }}
+          passphrase: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
           script: ls -l
