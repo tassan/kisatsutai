@@ -28,4 +28,5 @@ jobs:
           key: ${{ secrets.SSHKEY }}
           passphrase: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: ls -l
+          target: "/var/www/kisatsutai"
+          script: ls
